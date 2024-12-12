@@ -19,8 +19,24 @@ function addBooks(title, author, pages, status) {
 addBooks("Merchant of Nolita", "Shakespeare", "320", "unread")
 console.log(myLibrary)
 
-const userEntry = ["Hotrod", "Dean Callaghan", "530", "unread"]
+// ============ Basic AddBooks Function ==========
 
-addBooks(...userEntry)
-console.log(myLibrary)
+// get user input for all 4 values with forms
 
+// push user input into array object 
+
+// spread array into addBooks() function
+
+// console log myLibrary array
+
+
+
+    //Example
+    const userEntry = ["Hotrod", "Dean Callaghan", "530", "unread"]
+
+    addBooks(...userEntry)
+    console.log(myLibrary)
+
+
+
+// ============ Retrieve User Input as Array ==========
