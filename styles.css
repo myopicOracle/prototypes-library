@@ -1,0 +1,39 @@
+#container {
+    border: 2px solid grey;
+    /*  */
+    height: 100vh;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(150px, 200px));
+    gap: 10px;
+}
+
+.book.card {
+    border: 1px dashed lightseagreen;
+    /*  */
+    grid-column: span 1;
+    grid-row: span 1;
+    /*  */
+    /* USING GRID */
+    /* padding: 5px;
+    display:grid;
+    grid-template-rows: 4fr repeat(3, 1fr);
+    gap: 5px; */
+    /* USING FLEXBOX */
+    display: flex;
+    flex-flow: column wrap;
+
+}
+
+.book.content {
+    border: 1px dashed lightseagreen;
+    /*  */
+    flex: 1;
+}
+
+.book.cover {
+    border: 1px dashed lightseagreen;
+    flex: 6;
+    /*  */
+}

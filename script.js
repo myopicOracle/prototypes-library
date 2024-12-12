@@ -7,22 +7,20 @@ function bookConstructor(title, author, pages, status) {
     this.status = status;
 }
 
-function takesArguments(title, author, pages, status) {
+function addBooks(title, author, pages, status) {
 
     const newBookObject = new bookConstructor(title, author, pages, status);
 
     myLibrary.push(newBookObject);
 
-    return myLibrary;
+    // return myLibrary; // unecessary - push already executed
 }
 
-takesArguments("Merchant of Nolita", "Shakespeare", "320", "unread")
-
+addBooks("Merchant of Nolita", "Shakespeare", "320", "unread")
 console.log(myLibrary)
 
-function objectSpreader(details) {
-    takesArguments(details)
-}
-
 const userEntry = ["Hotrod", "Dean Callaghan", "530", "unread"]
-    console.log(takesArguments(...userEntry))
+
+addBooks(...userEntry)
+console.log(myLibrary)
+
