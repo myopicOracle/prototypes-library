@@ -11,26 +11,42 @@
 
 <main>
 <div id="forms-container">
-  <forms action="www.google.com" method="POST">
-    <table>
-      <thead>
-        <tr class="header">
-          <th class="header"><label for="" class="header"></label></th>
-          <th class="header"><label for="" class="header"></label></th>
-          <th class="header"><label for="" class="header"></label></th>
-          <th class="header"><label for="" class="header"></label></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="body">
-          <td class="body"><input type="" id="" name="" class="inputs"></td>
-          <td class="body"><input type="" id="" name="" class="inputs"></td>
-          <td class="body"><input type="" id="" name="" class="inputs"></td>
-          <td class="body"><input type="" id="" name="" class="inputs">  </input></td>
-        </tr>
-      </tbody>
-    </table>
-  </forms>
+  <form onSubmit="return handleClick()"> 
+    <!-- [OR] action="javascript:handleClick()" -->
+     <!-- [FOR ELES]  onClick="JavaScript:handleClick()" -->
+    <fieldset id="fieldset" class="forms">
+    <legend class="forms">Add New Book to Library</legend>
+      <table>
+        <thead>
+          <tr class="header">
+            <th class="header"><label for="title" class="header">Book Title</label></th>
+            <th class="header"><label for="author" class="header">Book Author</label></th>
+            <th class="header"><label for="pages" class="header">Book Page Count</label></th>
+            <th class="header"><label for="status" class="header">Book Read?</label></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="body">
+            <td class="body"><input type="text" id="title" name="title" class="inputs" required placeholder="Catcher in the Rye"></td>
+            <td class="body"><input type="text" id="author" name="author" class="inputs" required placeholder="John D. Salinger"></td>
+            <td class="body"><input type="number" id="pages" name="pages" class="inputs" required placeholder="238" min="1" max="2000"></td>
+            <td class="body">
+              <select name="status" id="status" size="1" class="inputs" required>
+                <option value="read">Yes, I've read this book.</option>
+                <option value="unread">No, I haven't had the chance.</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <fieldset>
+        <legend>Click Me!</legend>
+        <label for="button"></label>
+        <input type="submit" name="button" id="button" class="inputs button" value="Add Book">
+      </fieldset>
+    </fieldset>
+  </form>
 </div>
   <div id="container">
     <div class="book card">

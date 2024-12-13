@@ -1,3 +1,8 @@
+const titleInput = document.getElementById("title")
+const authorInput = document.getElementById("author")
+const pagesInput = document.getElementById("pages")
+const statusInput = document.getElementById("status")
+
 const myLibrary  = []
 
 function bookConstructor(title, author, pages, status) {
@@ -8,35 +13,42 @@ function bookConstructor(title, author, pages, status) {
 }
 
 function addBooks(title, author, pages, status) {
-
     const newBookObject = new bookConstructor(title, author, pages, status);
-
     myLibrary.push(newBookObject);
+}
+addBooks("Merchant of Nolita", "Shakespeare", "320", "unread")
 
-    // return myLibrary; // unecessary - push already executed
+// Form Submit Action           
+function handleClick() {
+    
+    // const title = titleInput.value
+    // const author = authorInput.value
+    // const pages = pagesInput.value
+    // const status = statusInput.value
+
+    addBooks(titleInput.value, authorInput.value, pagesInput.value, statusInput.value)
+    
+    // const addBook = {title, author, pages, status}
+    
+    // myLibrary.push(addBook)
+    console.log(myLibrary)
 }
 
-addBooks("Merchant of Nolita", "Shakespeare", "320", "unread")
 console.log(myLibrary)
 
-// ============ Basic AddBooks Function ==========
 
-// get user input for all 4 values with forms
 
-// push user input into array object 
 
-// spread array into addBooks() function
-
-// console log myLibrary array
 
 
 
     //Example
-    const userEntry = ["Hotrod", "Dean Callaghan", "530", "unread"]
+    // const userEntry = ["Hotrod", "Dean Callaghan", "530", "unread"]
 
-    addBooks(...userEntry)
-    console.log(myLibrary)
+    // addBooks(...userEntry)
+    // console.log(myLibrary)
 
 
 
 // ============ Retrieve User Input as Array ==========
+
