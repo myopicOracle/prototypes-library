@@ -11,9 +11,10 @@
 
 <main>
 <div id="forms-container">
-  <form onSubmit="return handleClick()"> 
+  <form action="javascript:handleClick()"> 
     <!-- [OR] action="javascript:handleClick()" -->
      <!-- [FOR ELES]  onClick="JavaScript:handleClick()" -->
+      <!-- onSubmit="return handleClick()" -->
     <fieldset id="fieldset" class="forms">
     <legend class="forms">Add New Book to Library</legend>
       <table>
@@ -22,7 +23,7 @@
             <th class="header"><label for="title" class="header">Book Title</label></th>
             <th class="header"><label for="author" class="header">Book Author</label></th>
             <th class="header"><label for="pages" class="header">Book Page Count</label></th>
-            <th class="header"><label for="status" class="header">Book Read?</label></th>
+            <th class="header"><label for="isRead" class="header">Book Read?</label></th>
           </tr>
         </thead>
         <tbody>
@@ -31,7 +32,7 @@
             <td class="body"><input type="text" id="author" name="author" class="inputs" required placeholder="John D. Salinger"></td>
             <td class="body"><input type="number" id="pages" name="pages" class="inputs" required placeholder="238" min="1" max="2000"></td>
             <td class="body">
-              <select name="status" id="status" size="1" class="inputs" required>
+              <select name="isRead" id="isRead" size="1" class="inputs" required>
                 <option value="read">Yes, I've read this book.</option>
                 <option value="unread">No, I haven't had the chance.</option>
               </select>
@@ -53,49 +54,49 @@
       <img src="" alt="" class="book cover">
       <div class="book content title"></div>
       <div class="book content author"></div>
-      <div class="book content status"></div>
+      <div class="book content isRead"></div>
     </div>
     <div class="book card">
       <img src="" alt="" class="book cover">
       <div class="book content title"></div>
       <div class="book content author"></div>
-      <div class="book content status"></div>
+      <div class="book content isRead"></div>
     </div>
     <div class="book card">
       <img src="" alt="" class="book cover">
       <div class="book content title"></div>
       <div class="book content author"></div>
-      <div class="book content status"></div>
+      <div class="book content isRead"></div>
     </div>
     <div class="book card">
       <img src="" alt="" class="book cover">
       <div class="book content title"></div>
       <div class="book content author"></div>
-      <div class="book content status"></div>
+      <div class="book content isRead"></div>
     </div>
     <div class="book card">
       <img src="" alt="" class="book cover">
       <div class="book content title"></div>
       <div class="book content author"></div>
-      <div class="book content status"></div>
+      <div class="book content isRead"></div>
     </div>
     <div class="book card">
       <img src="" alt="" class="book cover">
       <div class="book content title"></div>
       <div class="book content author"></div>
-      <div class="book content status"></div>
+      <div class="book content isRead"></div>
     </div>
     <div class="book card">
       <img src="" alt="" class="book cover">
       <div class="book content title"></div>
       <div class="book content author"></div>
-      <div class="book content status"></div>
+      <div class="book content isRead"></div>
     </div>
     <div class="book card">
       <img src="" alt="" class="book cover">
       <div class="book content title"></div>
       <div class="book content author"></div>
-      <div class="book content status">  </div>
+      <div class="book content isRead">  </div>
     </div>
   </div>
 </main>
@@ -104,6 +105,3 @@
     <script src="./script.js"></script>
   </body>
 </html>
-
-
-<!-- div#forms-container>forms[action=www.google.com method=POST]>(table>(thead>(tr.header>(td.header>label.header)*4))+(tbody>(tr.body>(td.body>input[type= id= name= class=inputs])*4)) -->

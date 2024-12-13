@@ -1,54 +1,65 @@
-const titleInput = document.getElementById("title")
-const authorInput = document.getElementById("author")
-const pagesInput = document.getElementById("pages")
-const statusInput = document.getElementById("status")
+// ============ Object Constructor Function ==========
 
-const myLibrary  = []
+const myLibrary  = [];
 
-function bookConstructor(title, author, pages, status) {
+function bookConstructor(title, author, pages, isRead) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.status = status;
+    this.isRead = isRead;
 }
 
-function addBooks(title, author, pages, status) {
-    const newBookObject = new bookConstructor(title, author, pages, status);
+function addBooks(title, author, pages, isRead) {
+    const newBookObject = new bookConstructor(title, author, pages, isRead);
     myLibrary.push(newBookObject);
 }
-addBooks("Merchant of Nolita", "Shakespeare", "320", "unread")
 
-// Form Submit Action           
-function handleClick() {
-    
-    // const title = titleInput.value
-    // const author = authorInput.value
-    // const pages = pagesInput.value
-    // const status = statusInput.value
+// ============ For Retrieving Values of Form Inputs ==========
 
-    addBooks(titleInput.value, authorInput.value, pagesInput.value, statusInput.value)
+const titleInput = document.getElementById("title");
+const authorInput = document.getElementById("author");
+const pagesInput = document.getElementById("pages");
+const statusInput = document.getElementById("isRead");
+
+const bookContainer = document.getElementById("container")
+
+// ============ Creates Book Element and Adds to Display Grid ==========
+
+function appendToDisplay(title, author, pages, isRead) {
+
+    const cardContainer = document.createElement("div")
+
+    const createTitle = document.createElement("div")
+    const createAuthor = document.createElement("div")
+    const createPages = document.createElement("div")
+    const createStatus = document.createElement("div")
+
+    createTitle.textContent = title;
+    createTitle.setAttribute("style", "border: 1px solid blue; flex: 1;")
+    cardContainer.appendChild(createTitle);
+
+    createAuthor.textContent = author;
+    createAuthor.setAttribute("style", "border: 1px solid blue; flex: 1;")
+    cardContainer.appendChild(createAuthor);
+
+    createPages.textContent = pages;
+    createPages.setAttribute("style", "border: 1px solid blue; flex: 1;")
+    cardContainer.appendChild(createPages);
+
+    createStatus.textContent = isRead;
+    createStatus.setAttribute("style", "border: 1px solid blue; flex: 1;")
+    cardContainer.appendChild(createStatus);
     
-    // const addBook = {title, author, pages, status}
-    
-    // myLibrary.push(addBook)
-    console.log(myLibrary)
+    cardContainer.setAttribute("style", "border: 2px solid red; display:flex; flex-flow: column wrap;")
+    bookContainer.appendChild(cardContainer)
 }
 
-console.log(myLibrary)
+// ============ Function Called When Form Submit CLicked ==========      
 
-
-
-
-
-
-
-    //Example
-    // const userEntry = ["Hotrod", "Dean Callaghan", "530", "unread"]
-
-    // addBooks(...userEntry)
-    // console.log(myLibrary)
-
-
+    function handleClick() {
+        addBooks(titleInput.value, authorInput.value, pagesInput.value, statusInput.value); 
+        appendToDisplay(titleInput.value, authorInput.value, pagesInput.value, statusInput.value);
+    }
 
 // ============ Retrieve User Input as Array ==========
 
