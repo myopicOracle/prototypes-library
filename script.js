@@ -29,28 +29,43 @@ function appendToDisplay(title, author, pages, isRead) {
 
     const cardContainer = document.createElement("div")
 
+    const createCover = document.createElement("img")
     const createTitle = document.createElement("div")
     const createAuthor = document.createElement("div")
     const createPages = document.createElement("div")
     const createStatus = document.createElement("div")
+    const createDelete = document.createElement("button")
 
-    createTitle.textContent = title;
-    createTitle.setAttribute("style", "border: 1px solid blue; flex: 1;")
+    createCover.setAttribute("src", "./images/3d-spellbook.png")
+    createCover.setAttribute("style", "height: 80px; width: 80px; margin: 5px; align-self: center; flex: 0 0 auto;")
+    cardContainer.appendChild(createCover);
+    
+    createTitle.textContent = `"${title}"`;
+    createTitle.setAttribute("class", "card content")
+    createTitle.setAttribute("style", "font-size: 10px; font-weight: 700; padding-left: 5px; flex: 1;")
     cardContainer.appendChild(createTitle);
 
     createAuthor.textContent = author;
-    createAuthor.setAttribute("style", "border: 1px solid blue; flex: 1;")
+    createAuthor.setAttribute("class", "card content")
+    createAuthor.setAttribute("style", "font-size: 9.5px; font-style: italic; padding-left: 5px; flex: 1;")
     cardContainer.appendChild(createAuthor);
 
-    createPages.textContent = pages;
-    createPages.setAttribute("style", "border: 1px solid blue; flex: 1;")
+    createPages.textContent = `${pages} pages`;
+    createPages.setAttribute("class", "card content")
+    createPages.setAttribute("style", "font-size: 9px; text-align: center; padding-left: 5px; flex: 1;")
     cardContainer.appendChild(createPages);
 
-    createStatus.textContent = isRead;
-    createStatus.setAttribute("style", "border: 1px solid blue; flex: 1;")
+    createStatus.textContent = `Status: ${isRead.toUpperCase()}`;
+    createStatus.setAttribute("class", "card content")
+    createStatus.setAttribute("style", "font-size: 9px; text-align: center; padding-left: 5px; flex: 1;")
     cardContainer.appendChild(createStatus);
     
-    cardContainer.setAttribute("style", "border: 2px solid red; display:flex; flex-flow: column wrap;")
+    createDelete.textContent = "Delete"
+    createDelete.setAttribute("onclick", "this.parentElement.remove()")
+    createDelete.setAttribute("style", "font-size: 12px; margin-bottom: 4px; border-top: 1px solid #C4C9B9; flex: 0 1 auto; align-self: center;")
+    cardContainer.appendChild(createDelete);
+    
+    cardContainer.setAttribute("class", "book card")
     bookContainer.appendChild(cardContainer)
 }
 
@@ -59,7 +74,8 @@ function appendToDisplay(title, author, pages, isRead) {
     function handleClick() {
         addBooks(titleInput.value, authorInput.value, pagesInput.value, statusInput.value); 
         appendToDisplay(titleInput.value, authorInput.value, pagesInput.value, statusInput.value);
+        titleInput.value = "";
+        authorInput.value = ""; 
+        pagesInput.value = ""; 
+        statusInput.value = ""; 
     }
-
-// ============ Retrieve User Input as Array ==========
-

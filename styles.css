@@ -1,20 +1,38 @@
+.montserrat-alternates-medium {
+    font-family: "Montserrat Alternates", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+* {
+    font-family: "Montserrat Alternates", serif;
+    background-color: azure;
+}
+
+legend {
+    font-size: 24px;
+    font-weight: 700;
+}
+
 #container {
     border: 2px solid grey;
-    /*  */
-    height: 100vh;
+    height: calc(100vh - 20vh);
+    overflow: scroll;
     padding: 10px;
+    margin: 2px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(150px, 200px));
-    gap: 10px;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 160px));
+    grid-template-rows: repeat(auto-fit, minmax(150px, 220px));
+    gap: 8px;
 }
 
 .book.card {
-    border: 1px dashed lightseagreen;
-    /*  */
+    border: 1px solid lightseagreen;
+    margin: 6px;
+    box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
     grid-column: span 1;
     grid-row: span 1;
-    /*  */
     /* USING GRID */
     /* padding: 5px;
     display:grid;
@@ -23,17 +41,11 @@
     /* USING FLEXBOX */
     display: flex;
     flex-flow: column wrap;
-
 }
 
-.book.content {
-    border: 1px dashed lightseagreen;
-    /*  */
-    flex: 1;
-}
-
-.book.cover {
-    border: 1px dashed lightseagreen;
-    flex: 6;
-    /*  */
+.card.content {
+    border-top: 1px solid #C4C9B9;
+    padding-top: 5px;
+    margin: 0px 6px;
+    overflow: hidden;
 }
