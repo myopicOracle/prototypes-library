@@ -1,4 +1,4 @@
-////Pseudocode/////////////////////////////////////////////////////////////////////
+////Pseudocode////////////////////////////////////////////////////////////////////////
 
 // 1. Get user inputs from DOM Form
 // 2. Pass inputs to constructor  
@@ -10,6 +10,15 @@
 // 7. Append element to display 
 // 8. Clear inputs
 
+////Constraint Validation////////////////////////////////////////////////////////////
+
+// import { _inputValidation, _clickValidation, titleObj, authorObj, pagesObj, isReadObj, submitObj } from './validation.js';
+
+// titleObj.addEventListener('input', _inputValidation)
+// authorObj.addEventListener('input', _inputValidation)
+// pagesObj.addEventListener('input', _inputValidation)
+// submitObj.addEventListener('click', _clickValidation)
+
 ////Global Variables/////////////////////////////////////////////////////////////////
 
 const bookContainer = document.getElementById("container");
@@ -19,6 +28,8 @@ const pagesInput = document.getElementById("pages");
 const statusInput = document.getElementById("isRead");
 
 const myLibrary  = [];
+
+titleInput.addEventListener('keydown', _testValidation)
 
 ////Class Modules////////////////////////////////////////////////////////////////////
 
