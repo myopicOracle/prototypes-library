@@ -2,50 +2,262 @@
     font-family: "Montserrat Alternates", serif;
     font-weight: 500;
     font-style: normal;
-  }
+}
 
+/* Base styles */
 * {
     font-family: "Montserrat Alternates", serif;
     background-color: azure;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 2rem;
+}
+
+/* Main layout */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+/* Container styles */
+#container {
+    flex: 1;
+    border: 2px solid grey;
+    overflow-y: auto;
+    padding: 1.5rem;
+    margin: 0;
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-auto-rows: minmax(240px, auto);
+    gap: 1.5rem;
+    min-height: 0;
+}
+
+/* Book card styles */
+.book.card {
+    border: 1px solid lightseagreen;
+    margin: 0;
+    padding: 1rem;
+    box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    transition: transform 0.2s ease;
+}
+
+.book.card:hover {
+    transform: translateY(-2px);
+}
+
+/* Content within book cards */
+.card.content {
+    border-top: 1px solid #C4C9B9;
+    padding: 0.75rem 0;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Ensure text doesn't overflow in book titles and authors */
+.card.content:first-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Demo button container */
+.demo-button-container {
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+}
+
+.demo-button-container .button {
+    padding: 8px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: lightseagreen;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.demo-button-container .button:hover {
+    background-color: #1a7a7a;
+}
+
+/* Form container styles */
+#forms-container {
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    background-color: transparent;
+}
+
+/* Form and fieldset resets */
+form, fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+/* Form fieldset styles */
+fieldset.forms {
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Form legend styles */
+legend.forms {
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 0 0.5rem;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+/* Table styles within form */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 1rem 0;
+    background-color: transparent;
+}
+
+th, td {
+    padding: 0.5rem;
+    text-align: left;
+    background-color: transparent;
+}
+
+th {
+    font-weight: 600;
+}
+
+/* Input and select styles */
+.inputs {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.25rem 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* Button styles */
+.button {
+    padding: 0.5rem 1rem;
+    background-color: lightseagreen;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: #1a7a7a;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        margin: 1rem;
+    }
+    
+    #container {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1.25rem;
+        padding: 1rem;
+    }
+    
+    .card.content {
+        padding: 0.5rem 0;
+        font-size: 0.9em;
+    }
+    
+    fieldset.forms {
+        padding: 1rem;
+    }
+    
+    th, td {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 0.75rem;
+    }
+    
+    #container {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        padding: 0.75rem;
+    }
+    
+    .card.content {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 576px) {
+    fieldset.forms {
+        padding: 0.75rem;
+    }
+    
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    th {
+        display: none;
+    }
+    
+    td {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: inline-block;
+        width: 50%;
+    }
 }
 
 legend {
     font-size: 24px;
     font-weight: 700;
-}
-
-#container {
-    border: 2px solid grey;
-    height: calc(100vh - 20vh);
-    overflow: scroll;
-    padding: 10px;
-    margin: 2px;
-    display: grid;
-    justify-content: space-evenly;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 160px));
-    grid-template-rows: repeat(auto-fit, minmax(150px, 220px));
-    gap: 8px;
-}
-
-.book.card {
-    border: 1px solid lightseagreen;
-    margin: 6px;
-    box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
-    grid-column: span 1;
-    grid-row: span 1;
-    /* USING GRID */
-    /* padding: 5px;
-    display:grid;
-    grid-template-rows: 4fr repeat(3, 1fr);
-    gap: 5px; */
-    /* USING FLEXBOX */
-    display: flex;
-    flex-flow: column wrap;
-}
-
-.card.content {
-    border-top: 1px solid #C4C9B9;
-    padding-top: 5px;
-    margin: 0px 6px;
-    overflow: hidden;
 }
