@@ -1,8 +1,6 @@
 # The Simple Library
 
-Built with vanilla JavaScript, this project was my first taste of OOP, getting some reps in for prototypal-inheritance, JS classes, constructor functions, DOM manipulation, and local storage.
-
-One of the simplest projects I've done, but easily one of the most memorable && fun.
+My first solo project from The Odin Project's JavaScript course. This simple library application helped me understand the basics of object-oriented programming, DOM manipulation, and event handling in JavaScript.
 
 ## Live Demo
 
@@ -10,33 +8,52 @@ One of the simplest projects I've done, but easily one of the most memorable && 
 
 ➡️ [Try the Live Demo](https://myopicoracle.github.io/prototypes-library/)
 
-## Features
+## What It Does
 
-- **Add Books**: Input book details including title, author, page count, and reading status
-- **Responsive Design**: Clean, card-based layout that works on all screen sizes
-- **Interactive UI**: Toggle book status and remove books with a single click
-- **Persistent Storage**: Books are saved in the browser's local storage
+- **Add Books**: Enter title, author, page count, and reading status
+- **Display Books**: Shows each book as a card in a grid layout
+- **Remove Books**: Delete books from the library
+- **Visual Feedback**: Uses images and styling to make books look like actual cards
 
-## Technical Stack
+## How It Works
+
+The project follows The Odin Project's requirements:
+
+- **Book Constructor**: Creates book objects with properties (title, author, pages, read status)
+- **Library Array**: Stores all book objects in a central array
+- **DOM Display**: Renders each book as a card element on the page
+- **Form Handling**: Uses `event.preventDefault()` to stop default form submission
+- **Data-Attributes**: Associates DOM elements with their corresponding book objects
+
+## Technical Details
 
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript (ES6+)
-- **Styling**: CSS Grid and Flexbox for responsive layouts
-- **Design**: Clean, intuitive user interface with Google Fonts integration
+- **Classes**: Uses ES6 classes with inheritance for book creation and display
+- **DOM Manipulation**: Creates and appends elements dynamically
+- **CSS Grid**: Responsive grid layout for book cards
+- **Event Handling**: Form submission and button interactions
 
 ## What I Learned
 
-- Object-oriented programming with JavaScript classes and prototypes
+This was my introduction to several core JavaScript concepts:
+
+- Constructor functions and object creation
+- Prototypal inheritance and class structure
 - DOM manipulation and event handling
-- Form validation and data persistence
-- Responsive web design principles
-- Code organization and project structure
+- Form processing and validation
+- Separating data logic from display logic
+- Basic responsive design with CSS Grid
 
-## Project Purpose
+Looking back at this code, I can see areas that could be improved, but this project taught me fundamental concepts that I still use today. It was simple enough to complete quickly but complex enough to teach important programming patterns.
 
-This project was completed as part of The Odin Project's JavaScript curriculum, focusing on:
-- Working with constructor functions and object prototypes
-- Implementing CRUD (Create, Read, Update, Delete) operations
-- Understanding the separation of data and display logic
-- Practicing clean, maintainable code structure
+## Project Context
 
-This was also the first project in Odin's Javascript Course, which meant it was one of the simplest projects I've ever attempted - but at the same time, this was one of the projects I had the most fun with. Even looking back through the code now, especially the v1 code, a lot of it looks super messy and not DRY, but I can still remember every line.
+This was Project #1 in The Odin Project's JavaScript curriculum. The assignment focused on:
+
+- Creating book objects using constructor functions
+- Storing objects in an array with unique IDs
+- Displaying data separately from the data structure
+- Implementing CRUD operations
+- Understanding event handling and form processing
+
+Even though it's one of the simplest projects I've built, it was memorable because it was my first experience putting together all the JavaScript concepts I had learned into a working application.
